@@ -236,6 +236,46 @@ main section img {
     grid-template-columns: repeat(10, 1fr);
 }
 
+
+
+#highlights, #encounters-1, #encounters-2 {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    align-items: center;
+    margin: 50px 0;
+}
+
+.section-header-h, .section-header-enc {
+    grid-column: span 10;
+    text-align: center;
+    color: #78A1BB;
+}
+
+.section-paragraphs-h, .section-paragraphs {
+    grid-column: span 10;
+    text-align: center;
+    color: #283044;
+}
+
+#group-photo, #gecko, #ram {
+    width: 100%;
+    max-width: 100%;
+}
+
+#group-photo, #gecko {
+    grid-column: 2/7;
+}
+
+#ram {
+    grid-column: 4/9;
+}
+
+#gecko {
+    order: -1; /* Move the image to the left on smaller screens */
+}
+
+
+
 @media screen and (max-width: 900px) {
     #hero, .home-grid {
         display: block;
