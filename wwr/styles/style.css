@@ -42,6 +42,22 @@ body {
 
 header {
     background-color: #283044; 
+    display: grid;
+    grid-template-columns: 150px auto;
+    align-items: center;
+}
+
+#logo_link {
+    padding-top: 5px;
+    justify-self: center;
+    align-self: center;
+    grid-row: 1/2;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    
 }
 
 nav a:hover {
@@ -49,6 +65,34 @@ nav a:hover {
     color: #283044;
     text-decoration: underline;
 }
+
+#hero {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    margin-top: -100px; 
+}
+
+#hero-box {
+    grid-column: 1/4;
+    grid-row: 1/3;
+}
+
+#hero-msg h4 {
+    color: white;
+}
+
+#hero-msg {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    margin-top: 100px;
+}
+
+#hero-box {
+    grid-column: 1/4;
+    grid-row: 1/3;
+    z-index: -1;
+}
+          
 
 .book, .join {
     background-color: #78A1BB;
@@ -68,25 +112,35 @@ nav a:hover {
 
 #background {
     background-color: #78A1BB;
+    grid-column: 1/11;
+    grid-row: 4/9;
 }
 
 .msg {
-    background-color: #78A1BB;
+    background-color: #283044;
     line-height: 1.5em;
     padding: 50px;
+    grid-column: 6/10;
+    grid-row: 6/7;
+    box-shadow: 5px 5px 10px #6f7364;
 }
 
 footer {
     background-color: #283044;
     color: #78A1BB;
     padding: 25px 50px;
+    margin-top: 200px; 
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .home-title {
-    color: #283044;
+    color: white;
     font-family: 'Bungee', 'Trebuchet MS', cursive;
     font-size: 2em;
     margin-top: 10px;
+    border: white;
 }
 
 h4 {
@@ -94,7 +148,7 @@ h4 {
 }
 
 .msg h2 {
-    color: black;
+    color: white;
     font-family: 'Bungee', 'Trebuchet MS', cursive;
 }
 
@@ -103,13 +157,13 @@ h2 {
 }
 
 .msg p {
-    color: #283044;
+    color: #78A1BB;
     font-size: .8em;
     padding-bottom: 15px;
 }
 
 footer a {
-    color: white;
+    color: #78A1BB;
     text-decoration: none;
 }
 
@@ -130,19 +184,39 @@ footer p {
     font-size: 1.2em;
 }
 
-#logo_link {
-    padding-top: 5px;
-}
-
 footer .social img {
     padding-top: 15px;
 }
+
 .rivers-card, .camping-card, .rapids-card {
     margin: 200px 0;
 }
 
+.rivers-card {
+    grid-column: 2/4;
+    grid-row: 2/3;
+}
+
+.camping-card {
+    grid-column: 5/7;
+    grid-row: 2/3;
+}
+
+.rapids-card {
+    grid-column: 8/10;
+    grid-row: 2/3;
+}
+
 .card-img {
     border: 10px solid #283044;
+    width: 100%;
+    transition: transform .5s;
+    box-shadow: 5px 5px 10px #6f7364;
+}
+
+.card-img:hover {
+    opacity: .6;
+    transform: scale(1.1);
 }
 
 main section img {
@@ -151,4 +225,57 @@ main section img {
 
 .mountains {
     margin: 50px 0px 100px;
+    width: 100%;
+    grid-column: 2/7;
+    grid-row: 5/8;
+    box-shadow: 5px 5px 10px #6f7364;
+}
+
+.home-grid {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+}
+
+@media screen and (max-width: 900px) {
+    #hero, .home-grid {
+        display: block;
+        height: auto;
+    }
+    nav, footer {
+        flex-direction: column;
+    }
+    nav a {
+        display: block;
+        padding: 15px;
+    }
+    #hero {
+        margin-top: 0;
+    }
+    #hero-msg {
+        margin-top: 0;
+    }
+    #hero-msg h4 {
+        display: none;
+    }
+    #hero-msg h1 {
+        color: #6f7364;
+    }
+    .home-title {
+        font-size: 25px;
+    }
+    .rivers-card, .camping-card, .rapids-card { 
+        margin: 50px auto;
+        width: 60%;
+    }
+    #background {
+        display: none;
+    }
+    .mountains, .msg {
+        width: 80%;
+        display: block;
+        margin: 0 auto;
+    }
+    footer {
+        margin-top: 25px;
+    }
 }
